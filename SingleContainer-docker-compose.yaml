@@ -9,8 +9,9 @@ services:
      privileged: true
      user: root
      hostname: ceph-s3
-     LANG: en_US.utf8
-     TZ: UTC
+     environment:
+      LANG: en_US.utf8
+      TZ: UTC
      volumes:
        - ./ceph_conf:/etc/ceph
        - ./ceph_data:/var/lib/ceph
@@ -52,5 +53,3 @@ networks:
       driver: default
       config:
         - subnet: 192.168.105.0/24
-                                                                                                                                                                                             69,1          Bot
-
